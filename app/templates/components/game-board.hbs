@@ -1,0 +1,13 @@
+
+<div class="container-fluid chessboard">
+  {{#each tileMatrix as | row |}}
+    <div class="row">
+
+      {{#each row as | tile |}}
+        {{board-tile coords=tile}}
+      {{/each}}
+
+    </div>
+  {{/each}}
+</div>
+

@@ -1,0 +1,32 @@
+
+.application-container {
+  width: 480px;
+}
+
+.page-wrapper {
+  padding-top: 40px;
+}
+
+.tile {
+  width:    52px;
+  height:   52px;
+  padding:  none;
+  float:    left;
+}
+
+.tile-white {
+  background-color: white;
+}
+
+.tile-black {
+  background-color: black;
+}
+
+.tile-positive {}
+
+.tile-negative {}
+
+.chess-piece {
+
+}
+

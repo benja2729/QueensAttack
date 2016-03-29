@@ -3,18 +3,15 @@ import Ember from 'ember';
 
 export default Ember.Mixin.create({
 
-  get coords() {
-    return { x: this.x, y: this.y };
-  },
-
-  set coords( hash ) {
-    throw "Property coords is read-only";
-  },
-
-  constructor( hash ) {
-    let { x, y } = hash;
-    Object.assign(this, { x, y });
-  },
+  position: Ember.computed({
+    get() {
+      return { x: this.x, y: this.y };
+    },
+    set( key, value ) {
+      this.setProperties(value);
+      return value;
+    }
+  }),
 
   compare( point ) {
     let { x, y }  = this.delta(point);
@@ -56,9 +53,10 @@ export default Ember.Mixin.create({
   },
 
   delta( point ) {
-    let { x, y } = point.coords;
+    let { x, y } = Ember.get(point, 'position') || point;
 
-    x -= this.x, y -= this.y;
+    x -= this.get('position.x');
+    y -= this.get('position.y');
     return { x, y };
   }
 

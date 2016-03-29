@@ -2,6 +2,7 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
+  gameEngine: Ember.inject.service('game-engine'),
 
   dimensions: { height: 8, width: 8 },
 

@@ -7,9 +7,12 @@
   padding-top: 40px;
 }
 
-.tile {
+.tile, .game-piece {
   width:    52px;
   height:   52px;
+}
+
+.tile {
   padding:  none;
   float:    left;
 }

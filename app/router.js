@@ -6,6 +6,11 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
+  this.route('team', { path: ':color' }, function() {
+    this.route('piece', function() {
+      this.route('position');
+    });
+  });
 });
 
 export default Router;
